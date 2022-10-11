@@ -7,6 +7,13 @@ $.prototype.init = function(selector) {
     return this; // this ссылается на только что созданный объект, в данном случае он пустой {}
   }
 
+  // Проверяем что пришло в selector, селектор класса или HtmlElement
+  if (selector.tagName) {
+    this[0] = selector;
+    this.length = 1;
+    return this;
+  }
+
   // Позволяет в уже существующий объект добавить новое свойство
   Object.assign(this, document.querySelectorAll(selector));
   this.length = document.querySelectorAll(selector).length; // записываем в объект новое свойство

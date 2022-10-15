@@ -4,13 +4,25 @@ import $ from './library/library';
 // $('.active').onEventListener('click', sayHi);
 // $('.active').offEventListener('click', sayHi);
 // $('button').click(sayHi);
-$('button').onEventListener('click', toggleClass);
 
-function toggleClass() {
-  $(this).toggleClass('active');
-}
+// $('button').onEventListener('click', toggleClass);
+// function toggleClass() {
+//   $(this).toggleClass('active');
+// }
 
-$('.active').onEventListener('click', function() {
-  $(this).removeClass('active')
-  console.log(`hello`)
-});
+// $('button').onEventListener('click', removeClass);
+// function removeClass() {
+//   $('.active').removeClass('active');
+// }
+
+// console.log($('button').html('click'));
+
+// $('button').onEventListener('click', function() {
+//   $('div').eq(2).toggleClass('active');
+// });
+
+// $('div').click(function() {
+//   console.log($(this).findIndexElement());
+// });
+
+console.log($('div').eq(2).findElementBySelector('.some'));

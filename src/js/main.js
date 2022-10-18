@@ -25,4 +25,8 @@ import $ from './library/library';
 //   console.log($(this).findIndexElement());
 // });
 
-console.log($('div').eq(2).findElementBySelector('.some'));
+// console.log($('div').eq(2).findElementBySelector('.some'));
+// console.log($('.some').closest('.find').addClass('type'));
+
+console.log($('.more').eq(0).findSiblings());
+console.log($('.find').findSiblings());

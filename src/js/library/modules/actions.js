@@ -44,7 +44,7 @@ $.prototype.findIndexElement = function() {
 $.prototype.findElementBySelector = function(selector) {
   let numberOfItems = 0; // Общее колличество элементов
   let counter = 0; // Колличество записаных элементов
-  const copyObj = Object.assign({}, this);
+  const copyObj = Object.assign({}, this); // Создаем копию главного объекта
 
   for (let i = 0; i < copyObj.length; i++) {
     const arr = copyObj[i].querySelectorAll(selector);
@@ -62,11 +62,64 @@ $.prototype.findElementBySelector = function(selector) {
 
   this.length = numberOfItems;
 
+  // Очищаем объект
   const objLength = Object.keys(this).length;
   for (; numberOfItems < objLength; numberOfItems++) {
     delete this[numberOfItems];
   }
 
   return this;
+};
 
+// Метод определяющий ближайщий блок по заданному селектору (closest()js)
+$.prototype.closest = function(selector) {
+  let counter = 0;
+
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].closest(selector) == null) {
+      this[i]; // TODO придумать корректное решение
+      counter++;
+    } else {
+      this[i] = this[i].closest(selector);
+      counter++;
+    }
+  }
+
+  const objLength = Object.keys(this).length;
+  for (; counter < objLength; counter++) {
+    delete this[counter];
+  }
+
+  return this;
+};
+
+// Метод получает все соседние элементы не включая этот элемент
+$.prototype.findSiblings = function() {
+  let numberOfItems = 0; // Общее колличество элементов
+  let counter = 0; // Колличество записаных элементов
+  const copyObj = Object.assign({}, this); // Создаем копию главного объекта
+
+  for (let i = 0; i < copyObj.length; i++) {
+    const arr = copyObj[i].parentNode.children;
+
+    for (let j = 0; j < arr.length; j++) {
+      if (copyObj[i] === arr[j]) {
+        continue;
+      }
+      this[counter] = arr[j];
+      counter++;
+    }
+
+    numberOfItems += arr.length - 1;
+  }
+
+  this.length = numberOfItems;
+
+  // Очищаем объект
+  const objLength = Object.keys(this).length;
+  for (; numberOfItems < objLength; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+
+  return this;
 };

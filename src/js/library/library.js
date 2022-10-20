@@ -6,5 +6,6 @@ import './modules/display';
 import './modules/classes';
 import './modules/hendlers';
 import './modules/actions';
+import './modules/effectst';
 
 export default $;

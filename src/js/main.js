@@ -28,5 +28,12 @@ import $ from './library/library';
 // console.log($('div').eq(2).findElementBySelector('.some'));
 // console.log($('.some').closest('.find').addClass('type'));
 
-console.log($('.more').eq(0).findSiblings());
-console.log($('.find').findSiblings());
+// console.log($('.more').eq(0).findSiblings());
+// console.log($('.find').findSiblings());
+
+$('button').fadeOut(2000);
+setTimeout(() => {
+  $('button').fadeIn(2000)
+}, 4000);
+
+

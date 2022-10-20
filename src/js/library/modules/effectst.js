@@ -55,9 +55,9 @@ $.prototype.fadeOut = function(duration, fin) {
       }
     };
 
-    const ani= this.animateOverTime(duration, _fadeOut, fin);
+    const ani = this.animateOverTime(duration, _fadeOut, fin);
     requestAnimationFrame(ani);
-
-    return this;
   }
+
+  return this;
 };

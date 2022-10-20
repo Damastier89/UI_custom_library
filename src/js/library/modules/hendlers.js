@@ -1,20 +1,22 @@
 import $ from '../core';
 
 $.prototype.onEventListener = function(eventName, callback) {
+  if (!eventName || !callback) {
+    return this;
+  }
+  
   for(let i = 0; i < this.length; i++) {
-    if (!eventName || !callback) {
-      return this;
-    }
     this[i].addEventListener(eventName, callback);
   }
   return this;
 };
 
 $.prototype.offEventListener = function(eventName, callback) {
+  if (!eventName || !callback) {
+    return this;
+  }
+
   for(let i = 0; i < this.length; i++) {
-    if (!eventName || !callback) {
-      return this;
-    }
     this[i].removeEventListener(eventName, callback);
   }
   return this;

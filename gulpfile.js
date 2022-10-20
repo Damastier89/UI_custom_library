@@ -59,7 +59,7 @@ gulp.task("build-js", () => {
 gulp.task("watch", () => {
     browsersync.init({
 		server: "./dist/",
-		port: 4000,
+		port: 5000,
 		notify: true
     });
     

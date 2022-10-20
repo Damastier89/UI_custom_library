@@ -1,39 +1,13 @@
 import $ from './library/library';
 
-// $('div').addClass('hello', 'hi');
-// $('.active').onEventListener('click', sayHi);
-// $('.active').offEventListener('click', sayHi);
-// $('button').click(sayHi);
+$('#first').onEventListener('click', () => {
+  $('div').eq(1).fadeOut(800);
+});
 
-// $('button').onEventListener('click', toggleClass);
-// function toggleClass() {
-//   $(this).toggleClass('active');
-// }
+$('[data-count="second"]').onEventListener('click', () => {
+  $('div').eq(2).fadeOut(800);
+});
 
-// $('button').onEventListener('click', removeClass);
-// function removeClass() {
-//   $('.active').removeClass('active');
-// }
-
-// console.log($('button').html('click'));
-
-// $('button').onEventListener('click', function() {
-//   $('div').eq(2).toggleClass('active');
-// });
-
-// $('div').click(function() {
-//   console.log($(this).findIndexElement());
-// });
-
-// console.log($('div').eq(2).findElementBySelector('.some'));
-// console.log($('.some').closest('.find').addClass('type'));
-
-// console.log($('.more').eq(0).findSiblings());
-// console.log($('.find').findSiblings());
-
-// $('button').fadeOut(2000);
-// setTimeout(() => {
-//   $('button').fadeIn(2000)
-// }, 4000);
-
-
+$('button').eq(2).onEventListener('click', () => {
+  $('.w-500').fadeOut(800);
+});
